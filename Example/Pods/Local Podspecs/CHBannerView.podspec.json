@@ -1,0 +1,31 @@
+{
+  "name": "CHBannerView",
+  "version": "0.1.0",
+  "summary": "BannerView.",
+  "description": "It is a simple banner view.",
+  "homepage": "https://github.com/chinghoi/CHBannerView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Chinghoi": "56465334@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/chinghoi/CHBannerView.git",
+    "tag": "0.1.0"
+  },
+  "swift_versions": [
+    "5"
+  ],
+  "platforms": {
+    "ios": "10.3"
+  },
+  "source_files": "CHBannerView/Classes/**/*",
+  "dependencies": {
+    "AlamofireImage": [
+
+    ]
+  },
+  "swift_version": "5"
+}

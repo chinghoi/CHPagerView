@@ -1,11 +1,6 @@
 use_frameworks!
+platform :ios, '10.3'
 
 target 'CHBannerView_Example' do
   pod 'CHBannerView', :path => '../'
-
-  target 'CHBannerView_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

@@ -1,0 +1,27 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
+  - CHBannerView (0.1.0):
+    - AlamofireImage
+
+DEPENDENCIES:
+  - CHBannerView (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+
+EXTERNAL SOURCES:
+  CHBannerView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  CHBannerView: 5d2e63f6718a51da24d97d08eb5eb2f5cd67bb36
+
+PODFILE CHECKSUM: a5a7c3d94a192d1de8ba440322017b43703b18a3
+
+COCOAPODS: 1.9.3

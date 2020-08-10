@@ -10,6 +10,8 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+- iOS 10.3 or later.
+- swift 5 or later.
 
 ## Installation
 
@@ -19,6 +21,12 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'CHBannerView'
 ```
+
+## Support
+- Content edges
+- Set data only images or urls.
+- Custom items view.
+- Scroll direction: vertical or horizontal.
 
 ## Author
 
