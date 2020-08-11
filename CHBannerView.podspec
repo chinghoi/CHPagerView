@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CHBannerView'
-  s.version          = '0.1.0'
+  s.version          = '0.1.2'
   s.summary          = 'BannerView.'
 
 # This description is used to generate tags and improve search results.
@@ -41,5 +41,5 @@ It is a simple banner view.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   
-  s.dependency 'AlamofireImage'
+  s.dependency 'AlamofireImage', '~> 4.1'
 end

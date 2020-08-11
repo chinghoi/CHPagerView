@@ -1,9 +1,8 @@
 # CHBannerView
 
-[![CI Status](https://img.shields.io/travis/Chinghoi/CHBannerView.svg?style=flat)](https://travis-ci.org/Chinghoi/CHBannerView)
-[![Version](https://img.shields.io/cocoapods/v/CHBannerView.svg?style=flat)](https://cocoapods.org/pods/CHBannerView)
+[![Version](https://img.shields.io/github/v/tag/chinghoi/CHBannerView)](https://cocoapods.org/pods/CHBannerView)
 [![License](https://img.shields.io/cocoapods/l/CHBannerView.svg?style=flat)](https://cocoapods.org/pods/CHBannerView)
-[![Platform](https://img.shields.io/cocoapods/p/CHBannerView.svg?style=flat)](https://cocoapods.org/pods/CHBannerView)
+[![Platform](https://img.shields.io/cocoapods/p/CHBannerView?color=green)](https://cocoapods.org/pods/CHBannerView)
 
 ## Example
 
@@ -21,6 +20,9 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'CHBannerView'
 ```
+
+## Dependencies
+- [AlamofireImage 4.1+](https://github.com/Alamofire/AlamofireImage)
 
 ## Support
 - Content edges

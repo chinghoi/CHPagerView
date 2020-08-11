@@ -1,6 +1,6 @@
 {
   "name": "CHBannerView",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "summary": "BannerView.",
   "description": "It is a simple banner view.",
   "homepage": "https://github.com/chinghoi/CHBannerView",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/chinghoi/CHBannerView.git",
-    "tag": "0.1.0"
+    "tag": "0.1.2"
   },
   "swift_versions": [
     "5"
@@ -24,7 +24,7 @@
   "source_files": "CHBannerView/Classes/**/*",
   "dependencies": {
     "AlamofireImage": [
-
+      "~> 4.1"
     ]
   },
   "swift_version": "5"

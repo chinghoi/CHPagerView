@@ -5,11 +5,10 @@
 //
 
 import UIKit
+import Alamofire
 import AlamofireImage
 
 class CHBannerCollectionViewCell: UICollectionViewCell {
-    
-    private var cacheCustomView: UIView?
     
     public final let imageView: UIImageView = {
         let i = UIImageView()
@@ -28,6 +27,16 @@ class CHBannerCollectionViewCell: UICollectionViewCell {
         imageView.frame = contentView.bounds
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.isHidden = false
+        contentView.subviews.forEach {
+            if $0 != imageView {
+                $0.removeFromSuperview()
+            }
+        }
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -42,10 +51,14 @@ class CHBannerCollectionViewCell: UICollectionViewCell {
     
     func setCell(data: UIView) {
         imageView.isHidden = true
-        guard data != cacheCustomView else { return }
-        contentView.subviews.forEach { $0.removeFromSuperview() }
         contentView.addSubview(data)
-        data.frame = contentView.bounds
+        data.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+          data.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+          data.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+          data.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+          data.heightAnchor.constraint(equalTo: contentView.heightAnchor)
+        ])
     }
     
     func setCellStyle(_ preference: CHBannerItemStyle) {
