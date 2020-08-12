@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/CHBannerView.svg?style=flat)](https://cocoapods.org/pods/CHBannerView)
 [![Platform](https://img.shields.io/cocoapods/p/CHBannerView?color=green)](https://cocoapods.org/pods/CHBannerView)
 
-[](https://github.com/chinghoi/CHBannerView/blob/master/demo.gif)
+![](https://github.com/chinghoi/CHBannerView/blob/master/demo.gif)
 
 ## Example
 
