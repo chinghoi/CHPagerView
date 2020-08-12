@@ -13,12 +13,13 @@ class ViewController: UIViewController {
     
     private lazy var bannerViewOne: CHBannerView = {
         let b = CHBannerView()
-        b.edgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 250)
-        b.minimumItemSpacing = 5
+        b.contentInset = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 100)
+        b.minimumItemSpacing = 25
         b.backgroundColor = .lightGray
         b.didSelectItem = { [weak self] bannerView, index in
             print("Did selected item in \(index)")
         }
+        b.isEndless = false
         return b
     }()
     
@@ -30,9 +31,10 @@ class ViewController: UIViewController {
 
     private lazy var bannerViewThree: CHBannerView = {
         let b = CHBannerView()
-        b.edgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
+        b.contentInset = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
         b.backgroundColor = .lightGray
         b.scrollDirection = .vertical
+        b.minimumItemSpacing = 40
         return b
     }()
 
@@ -59,15 +61,24 @@ class ViewController: UIViewController {
         }
         bannerViewTwo.setData(data: twoData)
         
+        let threeData: [UIView] = [UIColor.red, UIColor.yellow, UIColor.green].map {
+            let v = UIView()
+            v.backgroundColor = $0
+            return v
+        }
         let appendView = UIImageView(image: UIImage(named: "1"))
         appendView.contentMode = .scaleAspectFill
         appendView.clipsToBounds = true
-        bannerViewThree.setData(data: twoData + [appendView])
+        bannerViewThree.setData(data: threeData + [appendView])
     }
     
 }
 
 extension ViewController: CHBannerViewDelegate {
+    
+    func bannerView(_ bannerView: CHBannerView, didSelectItemAt index: Int) {
+        print("didSelectItemAt \(index)")
+    }
     func bannerViewDidEndScroll(_ bannerView: CHBannerView, current index: Int) {
         print("Banner view did end scroll in \(index)")
     }

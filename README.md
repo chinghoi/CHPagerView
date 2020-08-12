@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/cocoapods/l/CHBannerView.svg?style=flat)](https://cocoapods.org/pods/CHBannerView)
 [![Platform](https://img.shields.io/cocoapods/p/CHBannerView?color=green)](https://cocoapods.org/pods/CHBannerView)
 
+[](https://github.com/chinghoi/CHBannerView/blob/master/demo.gif)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -25,10 +27,12 @@ pod 'CHBannerView'
 - [AlamofireImage 4.1+](https://github.com/Alamofire/AlamofireImage)
 
 ## Support
-- Content edges
+- Content edges.
 - Set data only images or urls.
-- Custom items view.
+- Or Set custom items view.
 - Scroll direction: vertical or horizontal.
+- Minimum item spacing.
+- Can set auto rotation, Is it an infinite loop.
 
 ## Author
 

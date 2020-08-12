@@ -14,7 +14,7 @@ public class CHBannerView: UIView {
     public var didSelectItem: ((_ bannerView: CHBannerView, _ index: Int) -> Void)?
     
     // MARK: - Public
-    public var edgeInsets: UIEdgeInsets {
+    public var contentInset: UIEdgeInsets {
         set { collectionView.contentInset = newValue }
         get { collectionView.contentInset }
     }
@@ -42,11 +42,16 @@ public class CHBannerView: UIView {
     public var timeInterval: TimeInterval = 3
     
     /// Is Automatic rotation, default is true
-    public var isAutoRotation: Bool = true
+    public var isAutoRotation: Bool = true {
+        didSet {
+            timer?.invalidate()
+            timer = nil
+        }
+    }
     
-//    /// Is endless.
-//    /// Default is true
-//    public var isEndless: Bool = true
+    /// Is endless.
+    /// Default is true
+    public var isEndless: Bool = true
     
     public var itemStyle = CHBannerItemStyle() { didSet { collectionView.reloadData() } }
     
@@ -73,13 +78,22 @@ public class CHBannerView: UIView {
     }
     private var timer: Timer?
     /// 传入的数据的基础上 ，首部加入了最后一个数据， 尾部加入了第一个数据。该数据总长度为 原数据 + 2
-    private var data: [Any] = []
+    private var data: [Any] = [] {
+        didSet {
+            if data.count <= 1 {
+                isAutoRotation = false
+                isEndless = false
+            }
+        }
+    }
     private var indexArr: [Int] = []
     private var layout = CHBannerFlowLayout()
     
     private lazy var collectionView: UICollectionView = {
         let v = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        v.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CHBannerViewDefaultCell")
         v.register(CHBannerCollectionViewCell.self, forCellWithReuseIdentifier: "CHBannerCollectionViewCell")
+        v.register(CHBannerCustomCollectionViewCell.self, forCellWithReuseIdentifier: "CHBannerCustomCollectionViewCell")
         v.bounces = false
         v.isPagingEnabled = false
         v.decelerationRate = .fast
@@ -107,9 +121,9 @@ public class CHBannerView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         collectionView.frame = self.bounds
-        collectionView.contentInset = edgeInsets
+        collectionView.contentInset = contentInset
         
-        layout.itemSize = collectionView.bounds.inset(by: edgeInsets).size
+        layout.itemSize = collectionView.bounds.inset(by: contentInset).size
         collectionView.setCollectionViewLayout(layout, animated: false)
     }
     
@@ -122,23 +136,24 @@ public class CHBannerView: UIView {
     }
     
     private func setData(any: [Any]) {
-//        guard any.count >= 1, let last = any.last, let first = any.first else { return }
-//        self.data = [last] + any + [first]
         indexArr = []
         self.data = any
-        for _ in 0 ..< 100 {
+        
+        if isEndless {
+            for _ in 0 ..< 100 {
+                for j in 0 ..< data.count {
+                    indexArr.append(j)
+                }
+            }
+        } else {
             for j in 0 ..< data.count {
                 indexArr.append(j)
             }
         }
+        
         collectionView.reloadData()
         DispatchQueue.main.async {
-//            if self.scrollDirection == .horizontal {
-//                self.collectionView.contentOffset = CGPoint(x: self.itemAddSpacing - self.edgeInsets.left, y: -self.edgeInsets.top)
-//            } else {
-//                self.collectionView.contentOffset = CGPoint(x: -self.edgeInsets.left, y: self.itemAddSpacing - self.edgeInsets.top)
-//            }
-            self.scrollToItemFor(index: 50 * any.count, animated: false)
+            self.scrollToItemFor(index: (self.isEndless ? 50 : 0) * any.count, animated: false)
         }
 
         guard isAutoRotation else {
@@ -151,55 +166,32 @@ public class CHBannerView: UIView {
     
     @objc
     private func autoScrollAction() {
-//        if currentIndex == indexArr.count - 1 {
-//            scrollToFirstDataOnMain()
-//        }
         DispatchQueue.main.async {
-            self.scrollToItemFor(index: self.currentIndex + 1, animated: true)
+            var nextIndex: Int = 0
+            if self.isEndless {
+                nextIndex = self.currentIndex + 1
+            } else {
+                if self.currentIndex + 1 >= self.data.count {
+                    nextIndex = 0
+                } else {
+                    nextIndex = self.currentIndex + 1
+                }
+            }
+            self.scrollToItemFor(index: nextIndex, animated: true)
             self.collectionView.isUserInteractionEnabled = false
         }
     }
-//    private func scrollToFirstDataOnMain() {
-//        DispatchQueue.main.async {
-//            let offset: CGPoint
-//            if self.scrollDirection == .horizontal {
-//                offset = CGPoint(x: self.itemAddSpacing - self.edgeInsets.left, y: -self.edgeInsets.top)
-//            } else {
-//                offset = CGPoint(x: -self.edgeInsets.left, y: self.itemAddSpacing - self.edgeInsets.top)
-//            }
-//            self.collectionView.contentOffset = offset
-//        }
-//    }
-//    private func scrollToLastDataOnMain() {
-//        DispatchQueue.main.async {
-//            let offset: CGPoint
-//            if self.scrollDirection == .horizontal {
-//                offset = CGPoint(x: (self.itemAddSpacing * CGFloat(self.data.count - 2)) - self.edgeInsets.left, y: -self.edgeInsets.top)
-//            } else {
-//                offset = CGPoint(x: -self.edgeInsets.left, y: (self.itemAddSpacing * CGFloat(self.data.count - 2)) - self.edgeInsets.top)
-//            }
-//            self.collectionView.contentOffset = offset
-//        }
-//    }
     
     private func scrollToItemFor(index: Int, animated: Bool) {
         let nextOffset: CGPoint
         if self.scrollDirection == .horizontal {
-            nextOffset = CGPoint(x: CGFloat(index) * self.itemAddSpacing - self.edgeInsets.left, y: -self.edgeInsets.top)
+            nextOffset = CGPoint(x: CGFloat(index) * self.itemAddSpacing - self.contentInset.left, y: -self.contentInset.top)
         } else {
-            nextOffset = CGPoint(x: -self.edgeInsets.left, y: CGFloat(index) * self.itemAddSpacing - self.edgeInsets.top)
+            nextOffset = CGPoint(x: -self.contentInset.left, y: CGFloat(index) * self.itemAddSpacing - self.contentInset.top)
         }
         self.collectionView.setContentOffset(nextOffset, animated: animated)
     }
     
-//    private func checkPage() {
-//        if currentIndex == indexArr.count - 1 {
-//            scrollToFirstDataOnMain()
-//        }
-//        if currentIndex == 0 {
-//            scrollToLastDataOnMain()
-//        }
-//    }
 }
 
 extension CHBannerView: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -209,18 +201,19 @@ extension CHBannerView: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CHBannerCollectionViewCell", for: indexPath) as! CHBannerCollectionViewCell
-        
         let index = indexArr[indexPath.row]
         let item = data[index]
-        if let banner = item as? CHBanner {
-            cell.setCell(data: banner)
-        }
         if let customView = item as? UIView {
-            cell.setCell(data: customView)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CHBannerCustomCollectionViewCell", for: indexPath) as! CHBannerCustomCollectionViewCell
+            cell.setCell(customView: customView)
+            return cell
+        } else if let banner = item as? CHBanner {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CHBannerCollectionViewCell", for: indexPath) as! CHBannerCollectionViewCell
+            cell.setCell(data: banner)
+            cell.setCellStyle(itemStyle)
+            return cell
         }
-        cell.setCellStyle(itemStyle)
-        return cell
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "CHBannerViewDefaultCell", for: indexPath)
     }
     
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -237,14 +230,14 @@ extension CHBannerView: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        self.scrollToItemFor(index: 50 * data.count + (currentIndex % data.count), animated: false)
+        self.scrollToItemFor(index: (self.isEndless ? 50 : 0) * data.count + (currentIndex % data.count), animated: isEndless ? false : true)
     }
     
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         collectionView.isUserInteractionEnabled = true
         let index = currentIndex % data.count
         delegate?.bannerViewDidEndScroll(self, current: index)
-        self.scrollToItemFor(index: 50 * data.count + (currentIndex % data.count), animated: false)
+        self.scrollToItemFor(index: (self.isEndless ? 50 : 0) * data.count + (currentIndex % data.count), animated: isEndless ? false : true)
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -258,9 +251,9 @@ extension CHBannerView: UICollectionViewDataSource, UICollectionViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard self.itemAddSpacing > 0 else { return }
         if scrollDirection == .horizontal {
-            currentIndex = Int((scrollView.contentOffset.x + edgeInsets.left) / self.itemAddSpacing)
+            currentIndex = Int((scrollView.contentOffset.x + contentInset.left) / self.itemAddSpacing)
         } else {
-            currentIndex = Int((scrollView.contentOffset.y + edgeInsets.top) / self.itemAddSpacing)
+            currentIndex = Int((scrollView.contentOffset.y + contentInset.top) / self.itemAddSpacing)
         }
     }
 }

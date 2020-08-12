@@ -48,21 +48,6 @@ class CHBannerFlowLayout: UICollectionViewFlowLayout {
 
             return CGPoint(x: proposedContentOffset.x, y: newVerticalOffset)
         }
-        
-        // MARK: - 这里的方法也有效，上面的更优雅
-//        let index = (proposedContentOffset.x + collectionView.contentInset.left) / collectionView.frame.width
-//        print(index)
-//        var offsetX: CGFloat = 0
-//        if index.truncatingRemainder(dividingBy: 1) >= 0.5 { // 余数大于 0.5 滚到下一页
-//            print("next: \(index.truncatingRemainder(dividingBy: 1))")
-//            let next = index + 1
-//            offsetX = collectionView.frame.width * CGFloat(Int(next))
-//        } else { // 余数小于0.5，则滚回当前页的初始位置
-//            offsetX = collectionView.frame.width * CGFloat(Int(index))
-//            print("current: \(index.truncatingRemainder(dividingBy: 1))")
-//
-//        }
-//        return CGPoint(x: offsetX - collectionView.contentInset.left, y: proposedContentOffset.y)
     }
     
 }

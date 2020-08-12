@@ -27,16 +27,6 @@ class CHBannerCollectionViewCell: UICollectionViewCell {
         imageView.frame = contentView.bounds
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imageView.isHidden = false
-        contentView.subviews.forEach {
-            if $0 != imageView {
-                $0.removeFromSuperview()
-            }
-        }
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -47,18 +37,6 @@ class CHBannerCollectionViewCell: UICollectionViewCell {
         } else {
             imageView.image = data.image
         }
-    }
-    
-    func setCell(data: UIView) {
-        imageView.isHidden = true
-        contentView.addSubview(data)
-        data.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-          data.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-          data.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-          data.widthAnchor.constraint(equalTo: contentView.widthAnchor),
-          data.heightAnchor.constraint(equalTo: contentView.heightAnchor)
-        ])
     }
     
     func setCellStyle(_ preference: CHBannerItemStyle) {
