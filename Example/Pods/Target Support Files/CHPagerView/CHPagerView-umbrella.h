@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_CHBannerView_ExampleVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_CHBannerView_ExampleVersionString[];
+FOUNDATION_EXPORT double CHPagerViewVersionNumber;
+FOUNDATION_EXPORT const unsigned char CHPagerViewVersionString[];
 

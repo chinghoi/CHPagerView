@@ -1,36 +1,36 @@
 //
 //  ViewController.swift
-//  CHBannerView
+//  CHPagerView
 //
 //  Created by Chinghoi on 08/10/2020.
 //  Copyright (c) 2020 Chinghoi. All rights reserved.
 //
 
 import UIKit
-import CHBannerView
+import CHPagerView
 
 class ViewController: UIViewController {
     
-    private lazy var bannerViewOne: CHBannerView = {
-        let b = CHBannerView()
+    private lazy var bannerViewOne: CHPagerView = {
+        let b = CHPagerView()
         b.contentInset = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 100)
         b.minimumItemSpacing = 25
         b.backgroundColor = .lightGray
-        b.didSelectItem = { [weak self] bannerView, index in
+        b.didSelectItem = { [weak self] pagerView, index in
             print("Did selected item in \(index)")
         }
         b.isEndless = false
         return b
     }()
     
-    private lazy var bannerViewTwo: CHBannerView = {
-        let b = CHBannerView()
+    private lazy var bannerViewTwo: CHPagerView = {
+        let b = CHPagerView()
         b.delegate = self
         return b
     }()
 
-    private lazy var bannerViewThree: CHBannerView = {
-        let b = CHBannerView()
+    private lazy var bannerViewThree: CHPagerView = {
+        let b = CHPagerView()
         b.contentInset = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
         b.backgroundColor = .lightGray
         b.scrollDirection = .vertical
@@ -74,12 +74,12 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: CHBannerViewDelegate {
+extension ViewController: CHPagerViewDelegate {
     
-    func bannerView(_ bannerView: CHBannerView, didSelectItemAt index: Int) {
+    func pagerView(_ bannerView: CHPagerView, didSelectItemAt index: Int) {
         print("didSelectItemAt \(index)")
     }
-    func bannerViewDidEndScroll(_ bannerView: CHBannerView, current index: Int) {
+    func pagerViewDidEndScroll(_ bannerView: CHPagerView, current index: Int) {
         print("Banner view did end scroll in \(index)")
     }
 }

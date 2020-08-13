@@ -1,6 +1,6 @@
 //
 //  UIColorExtension.swift
-//  CHBannerView_Example
+//  CHPagerView_Example
 //
 //  Created by chinghoi on 2020/8/11.
 //  Copyright © 2020 CocoaPods. All rights reserved.

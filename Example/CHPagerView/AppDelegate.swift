@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  CHBannerView
+//  CHPagerView
 //
 //  Created by Chinghoi on 08/10/2020.
 //  Copyright (c) 2020 Chinghoi. All rights reserved.

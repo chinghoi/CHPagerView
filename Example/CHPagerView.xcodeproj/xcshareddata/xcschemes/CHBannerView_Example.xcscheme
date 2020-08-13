@@ -15,23 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "CHBannerView_Example.app"
-               BlueprintName = "CHBannerView_Example"
-               ReferencedContainer = "container:CHBannerView.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "CHBannerView_Tests.xctest"
-               BlueprintName = "CHBannerView_Tests"
-               ReferencedContainer = "container:CHBannerView.xcodeproj">
+               BuildableName = "CHPagerView_Example.app"
+               BlueprintName = "CHPagerView_Example"
+               ReferencedContainer = "container:CHPagerView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -41,26 +27,7 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "CHBannerView_Example.app"
-            BlueprintName = "CHBannerView_Example"
-            ReferencedContainer = "container:CHBannerView.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "CHBannerView_Tests.xctest"
-               BlueprintName = "CHBannerView_Tests"
-               ReferencedContainer = "container:CHBannerView.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -78,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "CHBannerView_Example.app"
-            BlueprintName = "CHBannerView_Example"
-            ReferencedContainer = "container:CHBannerView.xcodeproj">
+            BuildableName = "CHPagerView_Example.app"
+            BlueprintName = "CHPagerView_Example"
+            ReferencedContainer = "container:CHPagerView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -95,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "CHBannerView_Example.app"
-            BlueprintName = "CHBannerView_Example"
-            ReferencedContainer = "container:CHBannerView.xcodeproj">
+            BuildableName = "CHPagerView_Example.app"
+            BlueprintName = "CHPagerView_Example"
+            ReferencedContainer = "container:CHPagerView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

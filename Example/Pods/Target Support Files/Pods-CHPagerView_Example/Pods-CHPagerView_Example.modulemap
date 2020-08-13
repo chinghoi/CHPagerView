@@ -1,0 +1,6 @@
+framework module Pods_CHPagerView_Example {
+  umbrella header "Pods-CHPagerView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -11,18 +11,18 @@
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		A51ED23BC46FA333BE7D6E57 /* Pods_CHBannerView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD2588289AA835BDF80F210 /* Pods_CHBannerView_Example.framework */; };
+		A51ED23BC46FA333BE7D6E57 /* Pods_CHPagerView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD2588289AA835BDF80F210 /* Pods_CHPagerView_Example.framework */; };
 		E9381A4A24E248F100C478F9 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9381A4924E248F100C478F9 /* UIColorExtension.swift */; };
 		E9E8CC3424E149DA0015AC46 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9E8CC3324E149DA0015AC46 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		21C1E31139BB5ADD1D387C52 /* CHBannerView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CHBannerView.podspec; path = ../CHBannerView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		248255F4E04D04C07AF1B672 /* Pods-CHBannerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHBannerView_Tests.release.xcconfig"; path = "Target Support Files/Pods-CHBannerView_Tests/Pods-CHBannerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		2650C96D5A103A758CFC940F /* Pods-CHBannerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHBannerView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CHBannerView_Tests/Pods-CHBannerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		2AD2588289AA835BDF80F210 /* Pods_CHBannerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHBannerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4AFE805ED74F54526E10B429 /* Pods-CHBannerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHBannerView_Example.debug.xcconfig"; path = "Target Support Files/Pods-CHBannerView_Example/Pods-CHBannerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		607FACD01AFB9204008FA782 /* CHBannerView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHBannerView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21C1E31139BB5ADD1D387C52 /* CHPagerView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CHPagerView.podspec; path = ../CHPagerView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		248255F4E04D04C07AF1B672 /* Pods-CHPagerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHPagerView_Tests.release.xcconfig"; path = "Target Support Files/Pods-CHPagerView_Tests/Pods-CHPagerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		2650C96D5A103A758CFC940F /* Pods-CHPagerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHPagerView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CHPagerView_Tests/Pods-CHPagerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		2AD2588289AA835BDF80F210 /* Pods_CHPagerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHPagerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AFE805ED74F54526E10B429 /* Pods-CHPagerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHPagerView_Example.debug.xcconfig"; path = "Target Support Files/Pods-CHPagerView_Example/Pods-CHPagerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		607FACD01AFB9204008FA782 /* CHPagerView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHPagerView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,8 +30,8 @@
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		898E7031721C3C4F356C7B5E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		8CC335172CD8FD09E52476CE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		CBD05E32959CAA0A25BC1C36 /* Pods_CHBannerView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHBannerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD9C31132821CE733EEC7290 /* Pods-CHBannerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHBannerView_Example.release.xcconfig"; path = "Target Support Files/Pods-CHBannerView_Example/Pods-CHBannerView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CBD05E32959CAA0A25BC1C36 /* Pods_CHPagerView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHPagerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD9C31132821CE733EEC7290 /* Pods-CHPagerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHPagerView_Example.release.xcconfig"; path = "Target Support Files/Pods-CHPagerView_Example/Pods-CHPagerView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E9381A4924E248F100C478F9 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E9E8CC3324E149DA0015AC46 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A51ED23BC46FA333BE7D6E57 /* Pods_CHBannerView_Example.framework in Frameworks */,
+				A51ED23BC46FA333BE7D6E57 /* Pods_CHPagerView_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +51,10 @@
 		4E677E62327E83CD068350E9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4AFE805ED74F54526E10B429 /* Pods-CHBannerView_Example.debug.xcconfig */,
-				DD9C31132821CE733EEC7290 /* Pods-CHBannerView_Example.release.xcconfig */,
-				2650C96D5A103A758CFC940F /* Pods-CHBannerView_Tests.debug.xcconfig */,
-				248255F4E04D04C07AF1B672 /* Pods-CHBannerView_Tests.release.xcconfig */,
+				4AFE805ED74F54526E10B429 /* Pods-CHPagerView_Example.debug.xcconfig */,
+				DD9C31132821CE733EEC7290 /* Pods-CHPagerView_Example.release.xcconfig */,
+				2650C96D5A103A758CFC940F /* Pods-CHPagerView_Tests.debug.xcconfig */,
+				248255F4E04D04C07AF1B672 /* Pods-CHPagerView_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -63,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
-				607FACD21AFB9204008FA782 /* Example for CHBannerView */,
+				607FACD21AFB9204008FA782 /* Example for CHPagerView */,
 				607FACD11AFB9204008FA782 /* Products */,
 				4E677E62327E83CD068350E9 /* Pods */,
 				705249F2411975D160535F17 /* Frameworks */,
@@ -73,12 +73,12 @@
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* CHBannerView_Example.app */,
+				607FACD01AFB9204008FA782 /* CHPagerView_Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		607FACD21AFB9204008FA782 /* Example for CHBannerView */ = {
+		607FACD21AFB9204008FA782 /* Example for CHPagerView */ = {
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
@@ -89,8 +89,8 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
-			name = "Example for CHBannerView";
-			path = CHBannerView;
+			name = "Example for CHPagerView";
+			path = CHPagerView;
 			sourceTree = "<group>";
 		};
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
@@ -104,7 +104,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				21C1E31139BB5ADD1D387C52 /* CHBannerView.podspec */,
+				21C1E31139BB5ADD1D387C52 /* CHPagerView.podspec */,
 				8CC335172CD8FD09E52476CE /* README.md */,
 				898E7031721C3C4F356C7B5E /* LICENSE */,
 			);
@@ -114,8 +114,8 @@
 		705249F2411975D160535F17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2AD2588289AA835BDF80F210 /* Pods_CHBannerView_Example.framework */,
-				CBD05E32959CAA0A25BC1C36 /* Pods_CHBannerView_Tests.framework */,
+				2AD2588289AA835BDF80F210 /* Pods_CHPagerView_Example.framework */,
+				CBD05E32959CAA0A25BC1C36 /* Pods_CHPagerView_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,9 +123,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		607FACCF1AFB9204008FA782 /* CHBannerView_Example */ = {
+		607FACCF1AFB9204008FA782 /* CHPagerView_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "CHBannerView_Example" */;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "CHPagerView_Example" */;
 			buildPhases = (
 				E941B3C71E59C495D7584BED /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
@@ -137,9 +137,9 @@
 			);
 			dependencies = (
 			);
-			name = CHBannerView_Example;
-			productName = CHBannerView;
-			productReference = 607FACD01AFB9204008FA782 /* CHBannerView_Example.app */;
+			name = CHPagerView_Example;
+			productName = CHPagerView;
+			productReference = 607FACD01AFB9204008FA782 /* CHPagerView_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -160,7 +160,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "CHBannerView" */;
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "CHPagerView" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -174,7 +174,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				607FACCF1AFB9204008FA782 /* CHBannerView_Example */,
+				607FACCF1AFB9204008FA782 /* CHPagerView_Example */,
 			);
 		};
 /* End PBXProject section */
@@ -199,20 +199,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CHBannerView_Example/Pods-CHBannerView_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CHPagerView_Example/Pods-CHPagerView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/CHBannerView/CHBannerView.framework",
+				"${BUILT_PRODUCTS_DIR}/CHPagerView/CHPagerView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHBannerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHPagerView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CHBannerView_Example/Pods-CHBannerView_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CHPagerView_Example/Pods-CHPagerView_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E941B3C71E59C495D7584BED /* [CP] Check Pods Manifest.lock */ = {
@@ -230,7 +230,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CHBannerView_Example-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CHPagerView_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -373,18 +373,18 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4AFE805ED74F54526E10B429 /* Pods-CHBannerView_Example.debug.xcconfig */;
+			baseConfigurationReference = 4AFE805ED74F54526E10B429 /* Pods-CHPagerView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2ERF9J63R;
-				INFOPLIST_FILE = CHBannerView/Info.plist;
+				INFOPLIST_FILE = CHPagerView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CHPagerView_Example;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
@@ -393,18 +393,18 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD9C31132821CE733EEC7290 /* Pods-CHBannerView_Example.release.xcconfig */;
+			baseConfigurationReference = DD9C31132821CE733EEC7290 /* Pods-CHPagerView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2ERF9J63R;
-				INFOPLIST_FILE = CHBannerView/Info.plist;
+				INFOPLIST_FILE = CHPagerView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CHPagerView_Example;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
@@ -414,7 +414,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "CHBannerView" */ = {
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "CHPagerView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACED1AFB9204008FA782 /* Debug */,
@@ -423,7 +423,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "CHBannerView_Example" */ = {
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "CHPagerView_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
