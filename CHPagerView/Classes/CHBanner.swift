@@ -1,5 +1,5 @@
 //
-//  CHBannerView
+//  CHPagerView
 //
 //  Created by chinghoi on 2020/8/10.
 //

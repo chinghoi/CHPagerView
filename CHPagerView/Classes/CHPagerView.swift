@@ -1,5 +1,5 @@
 //
-//  CHBannerView
+//  CHPagerView
 //
 //  Created by chinghoi on 2020/8/10.
 //
@@ -7,11 +7,11 @@
 import UIKit
 import AlamofireImage
 
-/// BannerView, support set to UIView array, or default Banner class array.
-public class CHBannerView: UIView {
+/// PagerView, support set to UIView array, or default Banner class array.
+public class CHPagerView: UIView {
     
-    public weak var delegate: CHBannerViewDelegate?
-    public var didSelectItem: ((_ bannerView: CHBannerView, _ index: Int) -> Void)?
+    public weak var delegate: CHPagerViewDelegate?
+    public var didSelectItem: ((_ pagerView: CHPagerView, _ index: Int) -> Void)?
     
     // MARK: - Public
     public var contentInset: UIEdgeInsets {
@@ -53,7 +53,7 @@ public class CHBannerView: UIView {
     /// Default is true
     public var isEndless: Bool = true
     
-    public var itemStyle = CHBannerItemStyle() { didSet { collectionView.reloadData() } }
+    public var itemStyle = CHPagerItemStyle() { didSet { collectionView.reloadData() } }
     
     public override var backgroundColor: UIColor? {
         set { collectionView.backgroundColor = newValue }
@@ -87,13 +87,13 @@ public class CHBannerView: UIView {
         }
     }
     private var indexArr: [Int] = []
-    private var layout = CHBannerFlowLayout()
+    private var layout = CHPagerFlowLayout()
     
     private lazy var collectionView: UICollectionView = {
         let v = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        v.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CHBannerViewDefaultCell")
-        v.register(CHBannerCollectionViewCell.self, forCellWithReuseIdentifier: "CHBannerCollectionViewCell")
-        v.register(CHBannerCustomCollectionViewCell.self, forCellWithReuseIdentifier: "CHBannerCustomCollectionViewCell")
+        v.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CHPagerViewDefaultCell")
+        v.register(CHPagerCollectionViewCell.self, forCellWithReuseIdentifier: "CHPagerCollectionViewCell")
+        v.register(CHPagerCustomCollectionViewCell.self, forCellWithReuseIdentifier: "CHPagerCustomCollectionViewCell")
         v.bounces = false
         v.isPagingEnabled = false
         v.decelerationRate = .fast
@@ -194,7 +194,7 @@ public class CHBannerView: UIView {
     
 }
 
-extension CHBannerView: UICollectionViewDataSource, UICollectionViewDelegate {
+extension CHPagerView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return indexArr.count
@@ -204,16 +204,16 @@ extension CHBannerView: UICollectionViewDataSource, UICollectionViewDelegate {
         let index = indexArr[indexPath.row]
         let item = data[index]
         if let customView = item as? UIView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CHBannerCustomCollectionViewCell", for: indexPath) as! CHBannerCustomCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CHPagerCustomCollectionViewCell", for: indexPath) as! CHPagerCustomCollectionViewCell
             cell.setCell(customView: customView)
             return cell
         } else if let banner = item as? CHBanner {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CHBannerCollectionViewCell", for: indexPath) as! CHBannerCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CHPagerCollectionViewCell", for: indexPath) as! CHPagerCollectionViewCell
             cell.setCell(data: banner)
             cell.setCellStyle(itemStyle)
             return cell
         }
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "CHBannerViewDefaultCell", for: indexPath)
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "CHPagerViewDefaultCell", for: indexPath)
     }
     
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -236,13 +236,13 @@ extension CHBannerView: UICollectionViewDataSource, UICollectionViewDelegate {
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         collectionView.isUserInteractionEnabled = true
         let index = currentIndex % data.count
-        delegate?.bannerViewDidEndScroll(self, current: index)
+        delegate?.pagerViewDidEndScroll(self, current: index)
         self.scrollToItemFor(index: (self.isEndless ? 50 : 0) * data.count + (currentIndex % data.count), animated: isEndless ? false : true)
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.item % data.count
-        delegate?.bannerView(self, didSelectItemAt: index)
+        delegate?.pagerView(self, didSelectItemAt: index)
         if let b = didSelectItem {
             b(self, index)
         }

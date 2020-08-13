@@ -1,10 +1,10 @@
-# CHBannerView
+# CHPagerView
 
-[![Version](https://img.shields.io/github/v/tag/chinghoi/CHBannerView)](https://cocoapods.org/pods/CHBannerView)
-[![License](https://img.shields.io/cocoapods/l/CHBannerView.svg?style=flat)](https://cocoapods.org/pods/CHBannerView)
-[![Platform](https://img.shields.io/cocoapods/p/CHBannerView?color=green)](https://cocoapods.org/pods/CHBannerView)
+[![Version](https://img.shields.io/github/v/tag/chinghoi/CHPagerView)](https://cocoapods.org/pods/CHPagerView)
+[![License](https://img.shields.io/cocoapods/l/CHPagerView.svg?style=flat)](https://cocoapods.org/pods/CHPagerView)
+[![Platform](https://img.shields.io/cocoapods/p/CHPagerView?color=green)](https://cocoapods.org/pods/CHPagerView)
 
-![](https://github.com/chinghoi/CHBannerView/blob/master/demo.gif)
+![](https://github.com/chinghoi/CHPagerView/blob/master/demo.gif)
 
 ## Example
 
@@ -16,11 +16,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-CHBannerView is available through [CocoaPods](https://cocoapods.org). To install
+CHPagerView is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'CHBannerView'
+pod 'CHPagerView'
 ```
 
 ## Dependencies
@@ -40,4 +40,4 @@ Chinghoi, 56465334@qq.com
 
 ## License
 
-CHBannerView is available under the MIT license. See the LICENSE file for more info.
+CHPagerView is available under the MIT license. See the LICENSE file for more info.

@@ -1,5 +1,5 @@
 //
-//  CHBannerView
+//  CHPagerView
 //
 //  Created by chinghoi on 2020/8/10.
 //
@@ -8,7 +8,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class CHBannerCollectionViewCell: UICollectionViewCell {
+class CHPagerCollectionViewCell: UICollectionViewCell {
     
     public final let imageView: UIImageView = {
         let i = UIImageView()
@@ -39,7 +39,7 @@ class CHBannerCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func setCellStyle(_ preference: CHBannerItemStyle) {
+    func setCellStyle(_ preference: CHPagerItemStyle) {
         
         contentView.backgroundColor = preference.backgroundColor
         

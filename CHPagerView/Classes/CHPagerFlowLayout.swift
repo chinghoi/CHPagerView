@@ -1,12 +1,12 @@
 //
-//  CHBannerView
+//  CHPagerView
 //
 //  Created by chinghoi on 2020/8/10.
 //
 
 import UIKit
 
-class CHBannerFlowLayout: UICollectionViewFlowLayout {
+class CHPagerFlowLayout: UICollectionViewFlowLayout {
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         /// 建议的点（在集合视图的内容视图中），在该点停止滚动。这是如果不进行任何调整自然会停止滚动的值。该点反映了可见内容的左上角。

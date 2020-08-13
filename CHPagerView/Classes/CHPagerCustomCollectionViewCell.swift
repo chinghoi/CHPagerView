@@ -1,5 +1,5 @@
 //
-//  CHBannerCustomCollectionViewCell.swift
+//  CHPagerCustomCollectionViewCell.swift
 //  Alamofire
 //
 //  Created by chinghoi on 2020/8/12.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CHBannerCustomCollectionViewCell: UICollectionViewCell {
+class CHPagerCustomCollectionViewCell: UICollectionViewCell {
     
     var customView: UIView?
     
