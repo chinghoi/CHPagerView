@@ -101,6 +101,9 @@ public class CHPagerView: UIView {
         v.delegate = self
         v.showsVerticalScrollIndicator = false
         v.showsHorizontalScrollIndicator = false
+        if #available(iOS 11.0, *) {
+            v.contentInsetAdjustmentBehavior = .never
+        }
         return v
     }()
     
@@ -230,6 +233,8 @@ extension CHPagerView: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = currentIndex % data.count
+        delegate?.pagerViewDidEndScroll(self, current: index)
         self.scrollToItemFor(index: (self.isEndless ? 50 : 0) * data.count + (currentIndex % data.count), animated: isEndless ? false : true)
     }
     
