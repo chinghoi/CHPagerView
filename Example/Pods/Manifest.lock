@@ -2,7 +2,7 @@ PODS:
   - Alamofire (5.2.2)
   - AlamofireImage (4.1.0):
     - Alamofire (~> 5.1)
-  - CHPagerView (0.1.2):
+  - CHPagerView (0.1.5):
     - AlamofireImage (~> 4.1)
 
 DEPENDENCIES:
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
-  CHPagerView: e53cbf26903334a74010228c4df4780ea8cf2239
+  CHPagerView: fa36852c4c64c2c33fada33debf1fea253cca93b
 
 PODFILE CHECKSUM: eba2478e170e93b61ac452bdfeb4ad1017a50454
 

@@ -159,11 +159,9 @@ public class CHPagerView: UIView {
             self.scrollToItemFor(index: (self.isEndless ? 50 : 0) * any.count, animated: false)
         }
 
-        guard isAutoRotation else {
-            timer?.invalidate()
-            timer = nil
-            return
-        }
+        timer?.invalidate()
+        timer = nil
+        guard isAutoRotation else { return }
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(autoScrollAction), userInfo: nil, repeats: true)
     }
     
