@@ -162,7 +162,9 @@ public class CHPagerView: UIView {
         timer?.invalidate()
         timer = nil
         guard isAutoRotation else { return }
-        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(autoScrollAction), userInfo: nil, repeats: true)
+        weak var weakSelf = self
+        guard let weak = weakSelf else { return }
+        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: weak, selector: #selector(autoScrollAction), userInfo: nil, repeats: true)
     }
     
     @objc
@@ -227,7 +229,9 @@ extension CHPagerView: UICollectionViewDataSource, UICollectionViewDelegate {
             timer = nil
             return
         }
-        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(autoScrollAction), userInfo: nil, repeats: true)
+        weak var weakSelf = self
+        guard let weak = weakSelf else { return }
+        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: weak, selector: #selector(autoScrollAction), userInfo: nil, repeats: true)
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
