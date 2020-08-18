@@ -159,12 +159,22 @@ public class CHPagerView: UIView {
             self.scrollToItemFor(index: (self.isEndless ? 50 : 0) * any.count, animated: false)
         }
 
-        timer?.invalidate()
-        timer = nil
+        stopTimer()
         guard isAutoRotation else { return }
-        weak var weakSelf = self
-        guard let weak = weakSelf else { return }
-        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: weak, selector: #selector(autoScrollAction), userInfo: nil, repeats: true)
+        startTimer()
+    }
+    
+    private func startTimer() {
+      if timer == nil {
+        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(autoScrollAction), userInfo: nil, repeats: true)
+      }
+    }
+
+    private func stopTimer() {
+      if timer != nil {
+        timer!.invalidate()
+        timer = nil
+      }
     }
     
     @objc
@@ -220,18 +230,14 @@ extension CHPagerView: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        timer?.invalidate()
-        timer = nil
+        stopTimer()
     }
     public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         guard isAutoRotation else {
-            timer?.invalidate()
-            timer = nil
+            stopTimer()
             return
         }
-        weak var weakSelf = self
-        guard let weak = weakSelf else { return }
-        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: weak, selector: #selector(autoScrollAction), userInfo: nil, repeats: true)
+        startTimer()
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
