@@ -1,27 +1,16 @@
 PODS:
-  - Alamofire (5.2.2)
-  - AlamofireImage (4.1.0):
-    - Alamofire (~> 5.1)
-  - CHPagerView (0.1.7):
-    - AlamofireImage (~> 4.1)
+  - CHPagerView (0.2.1)
 
 DEPENDENCIES:
   - CHPagerView (from `../`)
-
-SPEC REPOS:
-  trunk:
-    - Alamofire
-    - AlamofireImage
 
 EXTERNAL SOURCES:
   CHPagerView:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
-  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
-  CHPagerView: f060ef8725a712a07aa43bca9ffb1824e0dad80a
+  CHPagerView: 9d327ee7e31975f1f362c427c6aa7c25b0a07075
 
 PODFILE CHECKSUM: eba2478e170e93b61ac452bdfeb4ad1017a50454
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

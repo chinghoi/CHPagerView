@@ -10,6 +10,7 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+
 ## Requirements
 - iOS 10.3 or later.
 - swift 5 or later.
@@ -24,7 +25,7 @@ pod 'CHPagerView'
 ```
 
 ## Dependencies
-- [AlamofireImage 4.1+](https://github.com/Alamofire/AlamofireImage)
+~~- [AlamofireImage 4.1+](https://github.com/Alamofire/AlamofireImage)~~
 
 ## Support
 - Content edges.

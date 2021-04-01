@@ -5,7 +5,6 @@
 //
 
 import UIKit
-import AlamofireImage
 
 /// PagerView, support set to UIView array, or default Banner class array.
 public class CHPagerView: UIView {
@@ -78,7 +77,7 @@ public class CHPagerView: UIView {
     }
     private var timer: Timer?
     /// 传入的数据的基础上 ，首部加入了最后一个数据， 尾部加入了第一个数据。该数据总长度为 原数据 + 2
-    private var data: [Any] = [] {
+    private var data: [CHDatable] = [] {
         didSet {
             if data.count <= 1 {
                 isAutoRotation = false
@@ -88,6 +87,13 @@ public class CHPagerView: UIView {
     }
     private var indexArr: [Int] = []
     private var layout = CHPagerFlowLayout()
+    
+    struct CHData: CHDatable {
+        var url: String? = nil
+        var placeholder: UIImage? = nil
+        var image: UIImage? = nil
+        var customView: UIView? = nil
+    }
     
     private lazy var collectionView: UICollectionView = {
         let v = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -130,17 +136,21 @@ public class CHPagerView: UIView {
         collectionView.setCollectionViewLayout(layout, animated: false)
     }
     
-    public func setData(data: [CHBanner]) {
-        setData(any: data)
+    public func setData(_ urls: [String], placeholder: UIImage? = nil) {
+        setData(arr: urls.map { CHData(url: $0, placeholder: placeholder) })
     }
     
-    public func setData(data: [UIView]) {
-        setData(any: data)
+    public func setData(_ images: [UIImage]) {
+        setData(arr: images.map { CHData(image: $0) })
     }
     
-    private func setData(any: [Any]) {
+    public func setData(_ customViews: [UIView]) {
+        setData(arr: customViews.map { CHData(customView: $0) })
+    }
+    
+    func setData<T: CHDatable>(arr: [T]) {
         indexArr = []
-        self.data = any
+        self.data = arr
         
         if isEndless {
             for _ in 0 ..< 100 {
@@ -156,7 +166,7 @@ public class CHPagerView: UIView {
         
         collectionView.reloadData()
         DispatchQueue.main.async {
-            self.scrollToItemFor(index: (self.isEndless ? 50 : 0) * any.count, animated: false)
+            self.scrollToItemFor(index: (self.isEndless ? 50 : 0) * arr.count, animated: false)
         }
 
         stopTimer()
@@ -216,17 +226,10 @@ extension CHPagerView: UICollectionViewDataSource, UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let index = indexArr[indexPath.row]
         let item = data[index]
-        if let customView = item as? UIView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CHPagerCustomCollectionViewCell", for: indexPath) as! CHPagerCustomCollectionViewCell
-            cell.setCell(customView: customView)
-            return cell
-        } else if let banner = item as? CHBanner {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CHPagerCollectionViewCell", for: indexPath) as! CHPagerCollectionViewCell
-            cell.setCell(data: banner)
-            cell.setCellStyle(itemStyle)
-            return cell
-        }
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "CHPagerViewDefaultCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CHPagerCollectionViewCell", for: indexPath) as! CHPagerCollectionViewCell
+        cell.setCell(data: item)
+        cell.setCellStyle(itemStyle)
+        return cell
     }
     
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

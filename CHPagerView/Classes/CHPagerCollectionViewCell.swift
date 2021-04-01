@@ -5,17 +5,19 @@
 //
 
 import UIKit
-import Alamofire
-import AlamofireImage
 
 class CHPagerCollectionViewCell: UICollectionViewCell {
     
-    public final let imageView: UIImageView = {
+    private var cache: CHDatable?
+    
+    public final lazy var imageView: UIImageView = {
         let i = UIImageView()
         i.contentMode = .scaleAspectFill
         i.clipsToBounds = true
         return i
     }()
+    
+    public var customView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,11 +33,31 @@ class CHPagerCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setCell(data: CHBanner) {
-        if let urlStr = data.url, let url = try? urlStr.asURL() {
-            imageView.af.setImage(withURL: url, cacheKey: url.absoluteString, placeholderImage: data.placeholder)
+    func setURL(_ url: String, placeholder: UIImage?) {
+        imageView.image = placeholder
+        imageView.loadWith(url: url)
+    }
+    
+    func setImage(_ image: UIImage) {
+        imageView.image = image
+    }
+    
+    func setCell(data: CHDatable) {
+        if let cv = data.customView {
+            self.customView = cv
+            contentView.addSubview(customView)
+            customView.translatesAutoresizingMaskIntoConstraints = false
+            customView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+            customView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+            customView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+            customView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        } else if let img = data.image {
+            setImage(img)
+        } else if let url = data.url {
+            setURL(url, placeholder: data.placeholder)
         } else {
-            imageView.image = data.image
+            contentView.subviews.forEach{ $0.removeFromSuperview() }
+            imageView.image = nil
         }
     }
     
@@ -45,4 +67,5 @@ class CHPagerCollectionViewCell: UICollectionViewCell {
         
         imageView.contentMode = preference.imageViewContentMode
     }
+    
 }

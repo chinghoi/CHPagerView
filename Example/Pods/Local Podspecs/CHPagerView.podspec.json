@@ -1,6 +1,6 @@
 {
   "name": "CHPagerView",
-  "version": "0.1.7",
+  "version": "0.2.1",
   "summary": "PagerView BannerView.",
   "description": "It is a simple banner view.",
   "homepage": "https://github.com/chinghoi/CHPagerView",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/chinghoi/CHPagerView.git",
-    "tag": "0.1.7"
+    "tag": "0.2.1"
   },
   "swift_versions": [
     "5"
@@ -22,10 +22,5 @@
     "ios": "10.3"
   },
   "source_files": "CHPagerView/Classes/**/*",
-  "dependencies": {
-    "AlamofireImage": [
-      "~> 4.1"
-    ]
-  },
   "swift_version": "5"
 }

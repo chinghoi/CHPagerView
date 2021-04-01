@@ -47,31 +47,20 @@ class ViewController: UIViewController {
         bannerViewOne.frame = CGRect(x: 0, y: 40, width: 375, height: 200)
         bannerViewTwo.frame = CGRect(x: 0, y: 250, width: 375, height: 200)
         bannerViewThree.frame = CGRect(x: 0, y: 460, width: 375, height: 200)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let oneData = [CHBanner(image: UIImage(named: "1")), CHBanner(image: UIImage(named: "2")), CHBanner(image: UIImage(named: "3"))]
-        bannerViewOne.setData(data: oneData)
         
-        let twoData: [UIView] = [UIColor.red, UIColor.yellow, UIColor.green].map {
+        let images = [UIImage(named: "1")!, UIImage(named: "2")!, UIImage(named: "3")!]
+        bannerViewOne.setData(images)
+
+        let customViews: [UIView] = [UIColor.red, UIColor.yellow, UIColor.green].map {
             let v = UIView()
             v.backgroundColor = $0
             return v
         }
-        bannerViewTwo.setData(data: twoData)
-        
-        let threeData: [UIView] = [UIColor.red, UIColor.yellow, UIColor.green].map {
-            let v = UIView()
-            v.backgroundColor = $0
-            return v
-        }
-        let appendView = UIImageView(image: UIImage(named: "1"))
-        appendView.contentMode = .scaleAspectFill
-        appendView.clipsToBounds = true
-        bannerViewThree.setData(data: threeData + [appendView])
+        bannerViewTwo.setData(customViews)
+
+        let urls = ["https://github.com/chinghoi/CHPagerView/blob/master/png1.png", "https://github.com/chinghoi/CHPagerView/blob/master/png2.png"]
+        bannerViewThree.setData(urls, placeholder: UIImage(named: "placeholder"))
     }
-    
 }
 
 extension ViewController: CHPagerViewDelegate {
