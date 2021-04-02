@@ -34,8 +34,7 @@ class CHPagerCollectionViewCell: UICollectionViewCell {
     }
     
     func setURL(_ url: String, placeholder: UIImage?) {
-        imageView.image = placeholder
-        imageView.loadWith(url: url)
+        imageView.loadWith(url: url, placeholder: placeholder)
     }
     
     func setImage(_ image: UIImage) {

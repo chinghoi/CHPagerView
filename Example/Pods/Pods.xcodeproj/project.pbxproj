@@ -15,7 +15,6 @@
 		B5754942E300D17E2867BBC2425D6BC9 /* Pods-CHPagerView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB7D9B2CAB9C55846558FEE062537BE /* Pods-CHPagerView_Example-dummy.m */; };
 		E5593041474C46D1A186BEFBED1131AE /* CHPagerFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25808A7D66AF714E940A7D565F28F6A9 /* CHPagerFlowLayout.swift */; };
 		E8D233D6F9F1395057AAC1865C0931A1 /* Pods-CHPagerView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CED1396C06A80F97D996950D4EA7EFE /* Pods-CHPagerView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E8F02879DDE1B948032FAF08CBC9EE0B /* CHPagerCustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E6406B300270EC6D8AD2ADF6810D81 /* CHPagerCustomCollectionViewCell.swift */; };
 		E9D5430C2604B064000975C9 /* CHLoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D5430B2604B064000975C9 /* CHLoadImage.swift */; };
 		EA754C9F1F43CC603C489249D8FF07C0 /* CHDatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFCECC0B483B831190ECFE0F84C4D7 /* CHDatable.swift */; };
 		EB5B4000D89074598AD5B6396A4DF6EC /* CHPagerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086DF117777DAA4C864BEAFC60BE012C /* CHPagerCollectionViewCell.swift */; };
@@ -56,7 +55,6 @@
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F67C2C0DAD49F1EC7D6E8F7F833D340 /* CHPagerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CHPagerView-umbrella.h"; sourceTree = "<group>"; };
 		A254D37E2FB1069F6F64A8CC7ED766C8 /* CHPagerItemStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CHPagerItemStyle.swift; path = CHPagerView/Classes/CHPagerItemStyle.swift; sourceTree = "<group>"; };
-		A4E6406B300270EC6D8AD2ADF6810D81 /* CHPagerCustomCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CHPagerCustomCollectionViewCell.swift; path = CHPagerView/Classes/CHPagerCustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		A60CABCB96F28C75A2C1326417495F6F /* Pods_CHPagerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHPagerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA830079050AD75E74EA14AE056E10E /* CHPagerView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CHPagerView-Info.plist"; sourceTree = "<group>"; };
 		DAC143519C43B1E9D94227480BC4A101 /* CHPagerViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CHPagerViewDelegate.swift; path = CHPagerView/Classes/CHPagerViewDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				5BBFCECC0B483B831190ECFE0F84C4D7 /* CHDatable.swift */,
 				E9D5430B2604B064000975C9 /* CHLoadImage.swift */,
 				086DF117777DAA4C864BEAFC60BE012C /* CHPagerCollectionViewCell.swift */,
-				A4E6406B300270EC6D8AD2ADF6810D81 /* CHPagerCustomCollectionViewCell.swift */,
 				25808A7D66AF714E940A7D565F28F6A9 /* CHPagerFlowLayout.swift */,
 				A254D37E2FB1069F6F64A8CC7ED766C8 /* CHPagerItemStyle.swift */,
 				9AD0F9A7ABE5770683E45E7AFBD2EB70 /* CHPagerView.swift */,
@@ -319,7 +316,6 @@
 				E9D5430C2604B064000975C9 /* CHLoadImage.swift in Sources */,
 				EA754C9F1F43CC603C489249D8FF07C0 /* CHDatable.swift in Sources */,
 				EB5B4000D89074598AD5B6396A4DF6EC /* CHPagerCollectionViewCell.swift in Sources */,
-				E8F02879DDE1B948032FAF08CBC9EE0B /* CHPagerCustomCollectionViewCell.swift in Sources */,
 				E5593041474C46D1A186BEFBED1131AE /* CHPagerFlowLayout.swift in Sources */,
 				45D06C72C7B35CB6565B0EE2EFC55FA3 /* CHPagerItemStyle.swift in Sources */,
 				50A1E411D9FFA56F9D81F7E355889065 /* CHPagerView-dummy.m in Sources */,

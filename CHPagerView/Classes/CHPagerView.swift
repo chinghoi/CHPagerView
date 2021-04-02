@@ -99,7 +99,6 @@ public class CHPagerView: UIView {
         let v = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         v.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CHPagerViewDefaultCell")
         v.register(CHPagerCollectionViewCell.self, forCellWithReuseIdentifier: "CHPagerCollectionViewCell")
-        v.register(CHPagerCustomCollectionViewCell.self, forCellWithReuseIdentifier: "CHPagerCustomCollectionViewCell")
         v.bounces = false
         v.isPagingEnabled = false
         v.decelerationRate = .fast
@@ -212,7 +211,11 @@ public class CHPagerView: UIView {
         } else {
             nextOffset = CGPoint(x: -self.contentInset.left, y: CGFloat(index) * self.itemAddSpacing - self.contentInset.top)
         }
-        self.collectionView.setContentOffset(nextOffset, animated: animated)
+        if animated {
+            self.collectionView.setContentOffset(nextOffset, animated: animated)
+        } else {
+            self.collectionView.contentOffset = nextOffset
+        }
     }
     
 }
@@ -229,6 +232,7 @@ extension CHPagerView: UICollectionViewDataSource, UICollectionViewDelegate {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CHPagerCollectionViewCell", for: indexPath) as! CHPagerCollectionViewCell
         cell.setCell(data: item)
         cell.setCellStyle(itemStyle)
+        cell.setNeedsLayout()
         return cell
     }
     

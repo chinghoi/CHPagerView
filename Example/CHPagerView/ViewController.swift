@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     private lazy var bannerViewTwo: CHPagerView = {
         let b = CHPagerView()
-        b.delegate = self
+//        b.delegate = self
         return b
     }()
 
@@ -35,6 +35,8 @@ class ViewController: UIViewController {
         b.backgroundColor = .lightGray
         b.scrollDirection = .vertical
         b.minimumItemSpacing = 40
+        b.delegate = self
+        b.timeInterval = 3
         return b
     }()
 
@@ -58,7 +60,8 @@ class ViewController: UIViewController {
         }
         bannerViewTwo.setData(customViews)
 
-        let urls = ["https://github.com/chinghoi/CHPagerView/blob/master/png1.png", "https://github.com/chinghoi/CHPagerView/blob/master/png2.png"]
+        let urls = ["https://github.com/chinghoi/CHPagerView/blob/master/png1.png?raw=true",
+                    "https://github.com/chinghoi/CHPagerView/blob/master/png2.png?raw=true"]
         bannerViewThree.setData(urls, placeholder: UIImage(named: "placeholder"))
     }
 }
