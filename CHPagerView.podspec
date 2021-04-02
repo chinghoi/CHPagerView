@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CHPagerView'
-  s.version          = '0.2.1'
-  s.summary          = 'PagerView BannerView.'
+  s.version          = '1.0.1'
+  s.summary          = 'PagerView Or BannerView.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
