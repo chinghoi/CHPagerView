@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     private lazy var bannerViewTwo: CHPagerView = {
         let b = CHPagerView()
-//        b.delegate = self
+        b.delegate = self
         return b
     }()
 
@@ -35,7 +35,6 @@ class ViewController: UIViewController {
         b.backgroundColor = .lightGray
         b.scrollDirection = .vertical
         b.minimumItemSpacing = 40
-        b.delegate = self
         b.timeInterval = 3
         return b
     }()
