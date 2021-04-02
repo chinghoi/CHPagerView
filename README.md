@@ -68,7 +68,7 @@ pod 'CHPagerView'
 ```
 
 ## 依赖
-~~- [AlamofireImage 4.1+](https://github.com/Alamofire/AlamofireImage)~~
+~~- [AlamofireImage 4.1+](https://github.com/Alamofire/AlamofireImage)~~(已移除)
 
 ## 支持
 - Content edges.
