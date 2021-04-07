@@ -26,7 +26,8 @@ pod 'CHPagerView'
 
 然后在项目目录运行`pod install`。
 
-### 基本用法(传入图片)
+## 使用方法
+#### 基本用法(传入图片)
 ```swift
 let bannerView = CHPagerView()
 let images = [UIImage(named: "1")!, UIImage(named: "2")!, UIImage(named: "3")!]
@@ -75,6 +76,7 @@ func pagerViewDidEndScroll(_ pagerView: CHPagerView, current index: Int)
 - 各项间距设置 Item spacing.
 - 自动滚动，无限或者有限滚动 Can set auto rotation, Is it an infinite loop.
 - 如果设置 urls，会缓存加载完成的图片。
+- 多长时间滚动一次
 
 ## Author
 
