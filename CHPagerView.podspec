@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CHPagerView'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'PagerView Or BannerView.'
 
 # This description is used to generate tags and improve search results.
@@ -28,8 +28,8 @@ It is a simple banner view.
   s.source           = { :git => 'https://github.com/chinghoi/CHPagerView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.swift_versions = ['5']
-  s.ios.deployment_target = '10.3'
+  # s.swift_versions = ['5']
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'CHPagerView/Classes/**/*'
 end
