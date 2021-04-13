@@ -28,7 +28,7 @@ It is a simple banner view.
   s.source           = { :git => 'https://github.com/chinghoi/CHPagerView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  # s.swift_versions = ['5']
+  s.swift_versions = ['5']
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'CHPagerView/Classes/**/*'
