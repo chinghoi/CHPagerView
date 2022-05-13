@@ -114,16 +114,20 @@ public class CHPagerView: UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setupUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupUI()
+    }
+    
+    private func setupUI() {
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         
         addSubview(collectionView)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     public override func layoutSubviews() {
