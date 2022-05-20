@@ -15,6 +15,15 @@
 - iOS 10.0 or later.
 - swift 5 or later.
 
+## 支持
+- 可设置banner内边距 Content edges.
+- 设置 图片， 自定义视图或者网络图片链接 Set images, custom views or urls.
+- 滚动方向 Scroll direction: vertical or horizontal.
+- 各项间距设置 Item spacing.
+- 自动滚动，无限或者有限滚动 Can set auto rotation, Is it an infinite loop.
+- 如果设置 urls，会缓存加载完成的图片。
+- 多长时间滚动一次
+
 ## 安装
 
 CHPagerView is available through [CocoaPods](https://cocoapods.org). To install
@@ -68,15 +77,6 @@ func pagerViewDidEndScroll(_ pagerView: CHPagerView, current index: Int)
 
 ## 依赖
 ~~- [AlamofireImage 4.1+](https://github.com/Alamofire/AlamofireImage)~~(已移除)
-
-## 支持
-- 内容内边距 Content edges.
-- 设置 图片， 自定义视图或者网络图片链接 Set images, custom views or urls.
-- 滚动方向 Scroll direction: vertical or horizontal.
-- 各项间距设置 Item spacing.
-- 自动滚动，无限或者有限滚动 Can set auto rotation, Is it an infinite loop.
-- 如果设置 urls，会缓存加载完成的图片。
-- 多长时间滚动一次
 
 ## Author
 
