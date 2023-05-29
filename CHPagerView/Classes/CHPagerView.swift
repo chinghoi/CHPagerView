@@ -12,6 +12,12 @@ public class CHPagerView: UIView {
     public weak var delegate: CHPagerViewDelegate?
     public var didSelectItem: ((_ pagerView: CHPagerView, _ index: Int) -> Void)?
     
+    /// 是否连续滚动
+    public var isContinuous: Bool {
+        set { layout.isContinuous = newValue }
+        get { layout.isContinuous }
+    }
+    
     // MARK: - Public
     public var contentInset: UIEdgeInsets {
         set { collectionView.contentInset = newValue }
