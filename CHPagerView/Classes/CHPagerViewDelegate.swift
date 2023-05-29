@@ -6,7 +6,7 @@
 
 import UIKit
 
-public protocol CHPagerViewDelegate: class {
+public protocol CHPagerViewDelegate: AnyObject {
     func pagerView(_ pagerView: CHPagerView, didSelectItemAt index: Int)
     func pagerViewDidEndScroll(_ pagerView: CHPagerView, current index: Int)
 }

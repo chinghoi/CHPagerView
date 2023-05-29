@@ -8,6 +8,9 @@ import UIKit
 
 class CHPagerFlowLayout: UICollectionViewFlowLayout {
     
+    /// 是否连续滚动
+    var isContinuous = false
+    
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         /// 建议的点（在集合视图的内容视图中），在该点停止滚动。这是如果不进行任何调整自然会停止滚动的值。该点反映了可见内容的左上角。
         
@@ -21,7 +24,7 @@ class CHPagerFlowLayout: UICollectionViewFlowLayout {
 
             let currentPage = velocity.x == 0 ? round(approximatePage) : (velocity.x < 0.0 ? floor(approximatePage) : ceil(approximatePage))
 
-            let flickVelocity = velocity.x * 1
+            let flickVelocity = isContinuous ? velocity.x * 1 : (velocity.x > 0 ? 1 : -1)
 
             let flickedPages = (abs(round(flickVelocity)) <= 1) ? 0 : round(flickVelocity)
 
@@ -39,7 +42,7 @@ class CHPagerFlowLayout: UICollectionViewFlowLayout {
             let currentPage = velocity.y == 0 ? round(approximatePage) : (velocity.y < 0.0 ? floor(approximatePage) : ceil(approximatePage))
 
             // Create custom flickVelocity.
-            let flickVelocity = velocity.y * 1
+            let flickVelocity = isContinuous ? velocity.y * 1 : (velocity.y > 0 ? 1 : -1)
 
             // Check how many pages the user flicked, if <= 1 then flickedPages should return 0.
             let flickedPages = (abs(round(flickVelocity)) <= 1) ? 0 : round(flickVelocity)

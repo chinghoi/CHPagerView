@@ -1,5 +1,5 @@
 use_frameworks!
-platform :ios, '10.3'
+platform :ios, '11.0'
 
 target 'CHPagerView_Example' do
   pod 'CHPagerView', :path => '../'
